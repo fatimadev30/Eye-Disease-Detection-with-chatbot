@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+:root {
+  --teal:        #009688;
+  --teal-dark:   #00695c;
+  --teal-mid:    #00796b;
+  --teal-light:  #4db6ac;
+  --teal-xlight: #b2dfdb;
+  --teal-pale:   #e0f2f1;
+  --accent:      #ffd54f;
+  --accent2:     #ff7043;
+  --white:       #ffffff;
+  --gray-50:     #f4f7f6;
+  --gray-100:    #eaf0ee;
+  --gray-200:    #d4e0dc;
+  --gray-400:    #90a4ae;
+  --gray-500:    #607d8b;
+  --gray-700:    #37474f;
+  --dark:        #1a2e2b;
+  --danger:      #ef5350;
+  --success:     #43a047;
+  --info:        #29b6f6;
+  --warn:        #ffa726;
+  --grad:        linear-gradient(135deg,#009688,#00695c);
+  --grad-light:  linear-gradient(135deg,#e0f2f1,#b2dfdb);
+  --shadow-xs:   0 1px 4px rgba(0,105,92,.10);
+  --shadow-sm:   0 3px 12px rgba(0,105,92,.13);
+  --shadow-md:   0 8px 32px rgba(0,105,92,.18);
+  --shadow-lg:   0 20px 60px rgba(0,105,92,.22);
+  --r:           14px;
+  --r-sm:        8px;
+  --r-xl:        22px;
+}
+
+/* Global App Typography and Background */
+.stApp {
+    background-color: var(--gray-50) !important;
+    font-family: 'DM Sans', sans-serif !important;
+    color: var(--dark) !important;
+}
+
+html, body, p, span, div, input, button, select, textarea {
+    font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
+    font-family: 'Syne', sans-serif !important;
+    color: var(--dark) !important;
+    font-weight: 800 !important;
+}
+
+h1 { color: var(--teal) !important; }
+
+[data-testid="stSidebar"] {
+    background: var(--grad) !important;
+    color: var(--white) !important;
+}
+[data-testid="stSidebar"] * {
+    color: var(--white) !important;
+}
+
+/* Base button styling - More flexible now */
+.stButton > button,
+button[kind="secondary"],
+button[kind="primary"],
+button[kind="formSubmit"],
+div[data-testid="stButton"] button,
+div[data-testid="stFormSubmitButton"] button,
+div[data-testid="stPopover"] > button,
+div[data-testid="stHorizontalBlock"] button {
+    border-radius: var(--r-sm) !important;
+    padding: 10px 22px !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    transition: all 0.3s ease !important;
+    text-align: center !important;
+    border: 2px solid transparent !important;
+}
+
+/* Default filled buttons */
+.stButton > button:not(.outlined),
+div[data-testid="stButton"] button:not(.outlined),
+div[data-testid="stFormSubmitButton"] button:not(.outlined) {
+    background: var(--grad) !important;
+    color: var(--white) !important;
+    box-shadow: 0 4px 14px rgba(0,150,136,.3) !important;
+}
+
+.stButton > button:hover,
+div[data-testid="stButton"] button:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 20px rgba(0,150,136,.4) !important;
+}
+
+/* OUTLINED BUTTONS - User's Request */
+div[data-testid="stForm"] button,
+button[data-baseweb="tab"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: var(--teal) !important;
+    border: 2px solid var(--teal) !important;
+    box-shadow: none !important;
+}
+
+div[data-testid="stForm"] button:hover {
+    background: var(--teal) !important;
+    color: white !important;
+}
+
+/* Tabs Styling */
+div[data-baseweb="tab-list"] {
+    background: transparent !important;
+    gap: 12px !important;
+    padding: 10px 0 !important;
+}
+
+button[data-baseweb="tab"] {
+    border: 1.5px solid var(--gray-200) !important;
+    color: var(--gray-500) !important;
+    padding: 8px 24px !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    border-color: var(--teal) !important;
+    color: var(--teal) !important;
+    background: transparent !important;
+    box-shadow: 0 0 0 1px var(--teal) !important;
+}
+
+div[data-baseweb="tab-highlight"] {
+    display: none !important;
+}
+
+/* Polished Input Fields */
+.stTextInput input, .stSelectbox > div > div {
+    width: 100% !important;
+    padding: 11px 14px !important;
+    border: 1.5px solid var(--gray-200) !important;
+    border-radius: var(--r-sm) !important;
+    font-size: 14px !important;
+    color: var(--dark) !important;
+    background: var(--gray-50) !important;
+    transition: border-color .2s, box-shadow .2s !important;
+    box-shadow: none !important;
+}
+
+.stTextInput input:focus, .stSelectbox > div > div:focus-within {
+    border-color: var(--teal) !important;
+    box-shadow: 0 0 0 3px rgba(0,150,136,.1) !important;
+    background: var(--white) !important;
+}
+
+/* Medical Disclaimer Box */
+.medical-disclaimer {
+    background-color: #ffebee;
+    border-left: 5px solid #f44336;
+    padding: 10px 15px;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    color: #c62828;
+    border-radius: var(--r-sm);
+}
+
+/* Chatbot styling */
+.chat-message {
+    padding: 1.5rem; border-radius: var(--r); margin-bottom: 1rem; display: flex;
+}
+.chat-message.user {
+    background: var(--grad);
+    color: var(--white);
+    box-shadow: 0 4px 14px rgba(0,150,136,.3);
+}
+.chat-message.bot {
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-xs);
+    color: var(--dark);
+}
+.chat-message .avatar {
+  width: 20%;
+}
+.chat-message .avatar img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.chat-message .message {
+  width: 80%;
+  padding: 0 1.5rem;
+}
+
+/* Vertical Block Border Wrapper (Cards) */
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: var(--white) !important;
+    border-radius: var(--r) !important;
+    border: 1px solid var(--gray-200) !important;
+    box-shadow: var(--shadow-sm) !important;
+    padding: 22px !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+[data-testid="stVerticalBlockBorderWrapper"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-md) !important;
+}

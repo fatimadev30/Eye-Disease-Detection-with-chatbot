@@ -1,0 +1,9 @@
+streamlit
+pandas
+pillow
+tensorflow==2.16.2
+bcrypt
+plotly
+google-generativeai
+python-dotenv
+protobuf==4.25.3
